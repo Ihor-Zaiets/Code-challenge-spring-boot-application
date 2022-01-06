@@ -1,13 +1,25 @@
 package Code.challenge.spring.boot.application.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.Date;
 
+@Entity
 public class Rezerwacja {
+
+    @Id
+    private Long id;
     private Date poczatek;
     private Date koniec;
+    @OneToOne
     private Wynajemca wynajemca;
+    @OneToOne
     private Najemca najemca;
     private int koszt;
+
+    public Rezerwacja() {
+    }
 
     public Rezerwacja(Date poczatek, Date koniec, Wynajemca wynajemca, Najemca najemca, int koszt) {
         this.poczatek = poczatek;
@@ -15,6 +27,14 @@ public class Rezerwacja {
         this.wynajemca = wynajemca;
         this.najemca = najemca;
         this.koszt = koszt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getPoczatek() {
@@ -60,7 +80,8 @@ public class Rezerwacja {
     @Override
     public String toString() {
         return "Rezerwacja{" +
-                "poczatek=" + poczatek +
+                "id=" + id +
+                ", poczatek=" + poczatek +
                 ", koniec=" + koniec +
                 ", wynajemca=" + wynajemca +
                 ", najemca=" + najemca +

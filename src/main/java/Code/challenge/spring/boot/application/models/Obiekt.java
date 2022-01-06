@@ -1,16 +1,34 @@
 package Code.challenge.spring.boot.application.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Obiekt {
+
+    @Id
+    private Long id;
     private String nazwa;
     private int cenaJednostkowa;
     private int powierzchnia;
     private String opis;
+
+    public Obiekt() {
+    }
 
     public Obiekt(String nazwa, int cenaJednostkowa, int powierzchnia, String opis) {
         this.nazwa = nazwa;
         this.cenaJednostkowa = cenaJednostkowa;
         this.powierzchnia = powierzchnia;
         this.opis = opis;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNazwa() {
@@ -48,7 +66,8 @@ public class Obiekt {
     @Override
     public String toString() {
         return "Obiekt{" +
-                "nazwa='" + nazwa + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
                 ", cenaJednostkowa=" + cenaJednostkowa +
                 ", powierzchnia=" + powierzchnia +
                 ", opis='" + opis + '\'' +

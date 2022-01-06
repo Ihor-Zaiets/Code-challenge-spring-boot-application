@@ -1,10 +1,28 @@
 package Code.challenge.spring.boot.application.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Najemca {
+
+    @Id
+    private Long id;
     private String nazwa;
+
+    public Najemca() {
+    }
 
     public Najemca(String nazwa) {
         this.nazwa = nazwa;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNazwa() {
@@ -18,7 +36,8 @@ public class Najemca {
     @Override
     public String toString() {
         return "Najemca{" +
-                "nazwa='" + nazwa + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
                 '}';
     }
 }
