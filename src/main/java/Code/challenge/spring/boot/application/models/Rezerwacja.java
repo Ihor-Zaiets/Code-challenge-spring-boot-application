@@ -16,16 +16,20 @@ public class Rezerwacja {
     private Wynajemca wynajemca;
     @OneToOne
     private Najemca najemca;
+    @OneToOne
+    private Obiekt obiekt;
     private int koszt;
 
     public Rezerwacja() {
     }
 
-    public Rezerwacja(Date poczatek, Date koniec, Wynajemca wynajemca, Najemca najemca, int koszt) {
+    public Rezerwacja(Long id, Date poczatek, Date koniec, Wynajemca wynajemca, Najemca najemca, Obiekt obiekt, int koszt) {
+        this.id = id;
         this.poczatek = poczatek;
         this.koniec = koniec;
         this.wynajemca = wynajemca;
         this.najemca = najemca;
+        this.obiekt = obiekt;
         this.koszt = koszt;
     }
 
@@ -69,6 +73,14 @@ public class Rezerwacja {
         this.najemca = najemca;
     }
 
+    public Obiekt getObiekt() {
+        return obiekt;
+    }
+
+    public void setObiekt(Obiekt obiekt) {
+        this.obiekt = obiekt;
+    }
+
     public int getKoszt() {
         return koszt;
     }
@@ -85,6 +97,7 @@ public class Rezerwacja {
                 ", koniec=" + koniec +
                 ", wynajemca=" + wynajemca +
                 ", najemca=" + najemca +
+                ", obiekt=" + obiekt +
                 ", koszt=" + koszt +
                 '}';
     }
