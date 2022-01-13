@@ -1,4 +1,6 @@
+(10.01.2022)
 Zdezydowałem dodać ten readme, żeby nie tylko było widać co wiem, ale jeszcze jak myślę.
+Tutaj jest opisany cały process moich myśli od początku projektu.
 
 Jeszcze podczas rozmowy rekrutacyjnej HR powiedziała mi, że data końcowa nie jest ustawiona i mogę wziąć tyle czasu, ile potrzebuję.
 Nie uwierzyłem w to spoczątku, bo gdybym robiłem to zadanie miesiąc albo dwa, to byłoby zbyt długo, dlatego ustawiłem sobie termin
@@ -69,3 +71,22 @@ rozbić na mniejsze części i iść krok po kroku". Jak ustawiłem sobie deadli
     zapewnienie, że mam tyle czasu, ile potrzebuję, pomogły mi zaspokoić się i usunąć presję czasu, którą uczuwałem.
         Teraz planuje googlować temat z realizacją przez @RestContoller i tam dalej edytować plany według tego, co dowie się.
         "Plan to jest nic, planowanie to jest wszystko".
+
+        (13.01.2022)
+        Dziś przegooglowałem temat. Zrozumiałem, że mój przeszły projekt pasuje do kryteria restful applikacji.
+    Adnotacja @Contorller też dotyczy tego tematu, nie tylko @RestController. Znalazłem równierz odpowiedź na swoje pytanie
+    "jak realizować odczyt danych z @RestController". W tym tutorialu był wykorzystywany @RestController, ale wszystko jedno
+    tworzył się @Controller i html formy. Teraz wiem, co będę dalej robił. Mam stworzyć html pliki i integrować ich w projekt.
+
+        Stop, nie. Znalazłem na ostatniej niezamkniętej stronie przykład realizacji przez @RestController. Znalazłem jak
+    można przesyłać dane do applikacji. Dowiedziałem się o istnieniu rest clientów, a szczególniej o Postmanie. Teraz mogę
+    odsyłać post request. Znałem, że jeśli można odsyłać json pliki z aplikacji, to i przyjmować w jakiś sposób to możliwe.
+    Ale teraz mam inny problem. Żeby testować applikacje mam pisać json pliki, ale nie umiem pisać json pliki, osobliwie
+    dla takiego skoplikowanego obietku jak Rezerwacja. Ta klasa ma pola typu danych Data i pola innych klasów.
+        Ja albo mam nauczyć się pisać json pliki, albo tworzyć applikacje przez @Controller z wykorzystaniem html plików,
+    template engine oraz modelów. I znowu nie wiem, co będzie lepiej.
+
+        Załatwienie tej sprawy zajęło mi czasu, ale w końcu zrozumiałem, że świetnie ten problem załatwia się przez pytanie do rekrutera.
+    Już mogę sformułować pytanie, to mogę wtedy zapytać to u Wiktorii.
+    Teraz wiem, że mam to robić przez @RestController, a znaczy nie mam spędzać siły na robienie wyboru.
+
