@@ -1,14 +1,13 @@
 package Code.challenge.spring.boot.application.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Rezerwacja {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date poczatek;
     private Date koniec;
