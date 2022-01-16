@@ -92,10 +92,9 @@ rozbić na mniejsze części i iść krok po kroku". Jak ustawiłem sobie deadli
 
         (16.01.2022)
         Wszoraj przegooglowałem temat. Wyjaśniałem jak pracować z klasą Date. Dowiedziałem się o istnieniu klasy Calendar.
-    Wyjaśniłem różnicę między klasami java.util a java.sql. Tylko nie znalazłem dlaczego mamy korzystać s klasy w pakiecie
+    Wyjaśniłem różnicę między klasami java.util a java.sql. Tylko nie znalazłem dlaczego mamy korzystać z klasy w pakiecie
     java.sql. Chyba poprostu wtedy nie biędzie data zachowac się do bazy, ale ja nie miałem takiego problemu, chociaż w klasie
     Rezerwacja mam java.util.Date. Myśle, to dlatego, że Spring Data Jpa sam przetwarza datę w poprawny format, ale nie wiem napewno.
-    Działa i dobrze, teraz mam inne rzeczy do zrobienia.
         Jeszcze googlowałem jak tworzą się zależności między tabelami w bazach danych. Pamiętam, że nie ma tam nic trudnego,
     ale dawno temu to uczyłem.
         Jeszcze znalazłem niewielki tutorial, jak pisać sjon pliki.
@@ -103,3 +102,11 @@ rozbić na mniejsze części i iść krok po kroku". Jak ustawiłem sobie deadli
         oczywiste, jak mam tworzyć post requesty.
 
         Teraz przetestowałem zapis i odczyt danych, wszystko działa. Z tego momentu mogę tworzyć metody według zadania.
+        Nagle nie działała mi metoda update. Załatwiłem to. Teraz mam realizować Service, żeby nie było nakładań rezerwacji.
+    Spoczątku chciałem zrobić to przez if else`y, ale potem zrozumiałem, że mam wyciągać dane z bazy danych, żeby ich sprawdzać.
+    Teraz coś mi tam kojarzy się z @Query oraz kluczowym słowem Between w sql requestach, tylko nie wiem jak to ma wyglądać
+    i nie mogę tego znaleźć.
+        Zostało mi realizować 3 rzeczy w projekcie:
+        - import.sql - odczyt tabeli obiektów z zewnętrznego pliku
+        - logikę Servisu, żeby nie było powtarzań
+        - napisać test
