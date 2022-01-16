@@ -30,6 +30,15 @@ public class Rezerwacja {
     public Rezerwacja() {
     }
 
+    public Rezerwacja(Date poczatek, Date koniec, Wynajemca wynajemca, Najemca najemca, Obiekt obiekt, int koszt) {
+        this.poczatek = poczatek;
+        this.koniec = koniec;
+        this.wynajemca = wynajemca;
+        this.najemca = najemca;
+        this.obiekt = obiekt;
+        this.koszt = koszt;
+    }
+
     public Rezerwacja(Long id, Date poczatek, Date koniec, Wynajemca wynajemca, Najemca najemca, Obiekt obiekt, int koszt) {
         this.id = id;
         this.poczatek = poczatek;
