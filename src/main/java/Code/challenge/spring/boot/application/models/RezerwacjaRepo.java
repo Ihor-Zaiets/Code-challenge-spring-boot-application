@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface RezerwacjaRepo extends JpaRepository<Rezerwacja, Long> {
     List<Rezerwacja> findAllByNajemca_Nazwa(String nazwa);
-    List<Rezerwacja> findAllByObiekt(Obiekt obiekt);
+    List<Rezerwacja> findAllByObiekt_Id(Long id);
 }

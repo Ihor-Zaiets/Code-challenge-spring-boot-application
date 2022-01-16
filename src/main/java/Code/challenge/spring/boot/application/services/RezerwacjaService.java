@@ -32,7 +32,7 @@ public class RezerwacjaService {
         return rezerwacjaDAO.showAllByNajemca(nazwaNajemcy);
     }
 
-    public List<Rezerwacja> pobracListeDlaObiektu(Obiekt obiekt) {
-        return rezerwacjaDAO.showAllByObiekt(obiekt);
+    public List<Rezerwacja> pobracListeDlaObiektu(Long id) {
+        return rezerwacjaDAO.showAllByObiekt(id);
     }
 }

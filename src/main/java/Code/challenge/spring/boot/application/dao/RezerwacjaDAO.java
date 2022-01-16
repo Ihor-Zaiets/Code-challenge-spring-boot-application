@@ -30,7 +30,7 @@ public class RezerwacjaDAO {
         return rezerwacjaRepo.findAllByNajemca_Nazwa(nazwaNajemcy);
     }
 
-    public List<Rezerwacja> showAllByObiekt(Obiekt obiekt) {
-        return rezerwacjaRepo.findAllByObiekt(obiekt);
+    public List<Rezerwacja> showAllByObiekt(Long id) {
+        return rezerwacjaRepo.findAllByObiekt_Id(id);
     }
 }
