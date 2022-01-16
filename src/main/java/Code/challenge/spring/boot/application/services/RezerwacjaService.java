@@ -22,13 +22,8 @@ public class RezerwacjaService {
     }
 
     //todo nie może być dwóch rezerwacji tego samego obiektu jednocześnie
-    public void create(Rezerwacja rezerwacja) {
+    public void save(Rezerwacja rezerwacja) {
         rezerwacjaRepo.save(rezerwacja);
-    }
-
-    //todo tu też
-    public void update(Rezerwacja nowaRezerwacja) {
-        rezerwacjaRepo.save(nowaRezerwacja);
     }
 
     public List<Rezerwacja> findByNajemca(String nazwaNajemcy) {
