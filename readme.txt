@@ -90,3 +90,16 @@ rozbić na mniejsze części i iść krok po kroku". Jak ustawiłem sobie deadli
     Już mogę sformułować pytanie, to mogę wtedy zapytać to u Wiktorii.
     Teraz wiem, że mam to robić przez @RestController, a znaczy nie mam spędzać siły na robienie wyboru.
 
+        (16.01.2022)
+        Wszoraj przegooglowałem temat. Wyjaśniałem jak pracować z klasą Date. Dowiedziałem się o istnieniu klasy Calendar.
+    Wyjaśniłem różnicę między klasami java.util a java.sql. Tylko nie znalazłem dlaczego mamy korzystać s klasy w pakiecie
+    java.sql. Chyba poprostu wtedy nie biędzie data zachowac się do bazy, ale ja nie miałem takiego problemu, chociaż w klasie
+    Rezerwacja mam java.util.Date. Myśle, to dlatego, że Spring Data Jpa sam przetwarza datę w poprawny format, ale nie wiem napewno.
+    Działa i dobrze, teraz mam inne rzeczy do zrobienia.
+        Jeszcze googlowałem jak tworzą się zależności między tabelami w bazach danych. Pamiętam, że nie ma tam nic trudnego,
+    ale dawno temu to uczyłem.
+        Jeszcze znalazłem niewielki tutorial, jak pisać sjon pliki.
+        Takie małe niewyjaśnione rzeczy przeszkadzali mi w napisaniu json plików. Jak tylko wszystko wyjaśniłem, odrazu stało
+        oczywiste, jak mam tworzyć post requesty.
+
+        Teraz przetestowałem zapis i odczyt danych, wszystko działa. Z tego momentu mogę tworzyć metody według zadania.
