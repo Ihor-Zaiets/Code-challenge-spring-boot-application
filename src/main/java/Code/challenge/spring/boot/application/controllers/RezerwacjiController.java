@@ -18,13 +18,28 @@ public class RezerwacjiController {
         this.rezerwacjaRepo = rezerwacjaRepo;
     }
 
+    @GetMapping
+    public List<Rezerwacja> showAll() {
+        return rezerwacjaRepo.findAll();
+    }
+
+    @GetMapping("/najemca/{nazwa}")
+    public List<Rezerwacja> showAll(@PathVariable String nazwa) {
+        return rezerwacjaRepo.findAllByNajemca_Nazwa(nazwa);
+    }
+
+    @GetMapping("/obiekt/{id}")
+    public List<Rezerwacja> showAll(@PathVariable Long id) {
+        return rezerwacjaRepo.findAllByObiekt_Id(id);
+    }
+
     @PostMapping
     public void create(@RequestBody Rezerwacja rezerwacja) {
         rezerwacjaRepo.save(rezerwacja);
     }
 
-    @GetMapping
-    public List<Rezerwacja> showAll() {
-        return rezerwacjaRepo.findAll();
+    @PatchMapping("/{id}")
+    public void update (@RequestBody Rezerwacja rezerwacja) {
+        rezerwacjaRepo.save(rezerwacja);
     }
 }
