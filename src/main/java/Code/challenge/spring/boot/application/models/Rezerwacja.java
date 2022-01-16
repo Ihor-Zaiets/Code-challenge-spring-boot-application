@@ -3,7 +3,7 @@ package Code.challenge.spring.boot.application.models;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 public class Rezerwacja {
