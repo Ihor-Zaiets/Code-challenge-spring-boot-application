@@ -35,11 +35,13 @@ public class RezerwacjiController {
 
     @PostMapping
     public void create(@RequestBody Rezerwacja rezerwacja) {
-        rezerwacjaService.create(rezerwacja);
+        rezerwacjaService.save(rezerwacja);
     }
 
     @PatchMapping("/{id}")
-    public void update (@RequestBody Rezerwacja rezerwacja) {
-        rezerwacjaService.update(rezerwacja);
+    public void update ( @PathVariable Long id,
+            @RequestBody Rezerwacja rezerwacja) {
+        rezerwacja.setId(id);
+        rezerwacjaService.save(rezerwacja);
     }
 }
