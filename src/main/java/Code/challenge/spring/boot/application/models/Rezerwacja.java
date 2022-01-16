@@ -1,5 +1,7 @@
 package Code.challenge.spring.boot.application.models;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,11 +13,17 @@ public class Rezerwacja {
     private Long id;
     private Date poczatek;
     private Date koniec;
+
     @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Wynajemca wynajemca;
+
     @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Najemca najemca;
+
     @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Obiekt obiekt;
     private int koszt;
 
