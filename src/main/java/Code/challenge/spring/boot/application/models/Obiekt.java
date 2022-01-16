@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Obiekt {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nazwa;
     private int cenaJednostkowa;
