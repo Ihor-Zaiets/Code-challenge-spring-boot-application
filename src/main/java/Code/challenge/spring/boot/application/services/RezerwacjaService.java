@@ -1,8 +1,7 @@
 package Code.challenge.spring.boot.application.services;
 
-import Code.challenge.spring.boot.application.dao.RezerwacjaDAO;
-import Code.challenge.spring.boot.application.models.Obiekt;
 import Code.challenge.spring.boot.application.models.Rezerwacja;
+import Code.challenge.spring.boot.application.models.RezerwacjaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,28 +10,32 @@ import java.util.List;
 @Service
 public class RezerwacjaService {
 
-    private final RezerwacjaDAO rezerwacjaDAO;
+    private final RezerwacjaRepo rezerwacjaRepo;
 
     @Autowired
-    public RezerwacjaService(RezerwacjaDAO rezerwacjaDAO) {
-        this.rezerwacjaDAO = rezerwacjaDAO;
+    public RezerwacjaService(RezerwacjaRepo rezerwacjaRepo) {
+        this.rezerwacjaRepo = rezerwacjaRepo;
+    }
+
+    public List<Rezerwacja> showAll() {
+        return rezerwacjaRepo.findAll();
     }
 
     //todo nie może być dwóch rezerwacji tego samego obiektu jednocześnie
-    public void dodacRezerwacje(Rezerwacja rezerwacja) {
-        rezerwacjaDAO.save(rezerwacja);
+    public void create(Rezerwacja rezerwacja) {
+        rezerwacjaRepo.save(rezerwacja);
     }
 
     //todo tu też
-    public void zmienicRezerwacje(Rezerwacja nowaRezerwacja) {
-        rezerwacjaDAO.save(nowaRezerwacja);
+    public void update(Rezerwacja nowaRezerwacja) {
+        rezerwacjaRepo.save(nowaRezerwacja);
     }
 
-    public List<Rezerwacja> pobracRezerwacjiDlaNajemce(String nazwaNajemcy) {
-        return rezerwacjaDAO.showAllByNajemca(nazwaNajemcy);
+    public List<Rezerwacja> findByNajemca(String nazwaNajemcy) {
+        return rezerwacjaRepo.findAllByNajemca_Nazwa(nazwaNajemcy);
     }
 
-    public List<Rezerwacja> pobracListeDlaObiektu(Long id) {
-        return rezerwacjaDAO.showAllByObiekt(id);
+    public List<Rezerwacja> findByObiekt(Long id) {
+        return rezerwacjaRepo.findAllByObiekt_Id(id);
     }
 }

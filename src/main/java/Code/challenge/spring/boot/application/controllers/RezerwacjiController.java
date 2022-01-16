@@ -1,7 +1,7 @@
 package Code.challenge.spring.boot.application.controllers;
 
 import Code.challenge.spring.boot.application.models.Rezerwacja;
-import Code.challenge.spring.boot.application.models.RezerwacjaRepo;
+import Code.challenge.spring.boot.application.services.RezerwacjaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,35 +11,35 @@ import java.util.List;
 @RequestMapping("/rezerwacji")
 public class RezerwacjiController {
 
-    private final RezerwacjaRepo rezerwacjaRepo;
+    private final RezerwacjaService rezerwacjaService;
 
     @Autowired
-    public RezerwacjiController(RezerwacjaRepo rezerwacjaRepo) {
-        this.rezerwacjaRepo = rezerwacjaRepo;
+    public RezerwacjiController(RezerwacjaService rezerwacjaService) {
+        this.rezerwacjaService = rezerwacjaService;
     }
 
     @GetMapping
     public List<Rezerwacja> showAll() {
-        return rezerwacjaRepo.findAll();
+        return rezerwacjaService.showAll();
     }
 
     @GetMapping("/najemca/{nazwa}")
     public List<Rezerwacja> showAll(@PathVariable String nazwa) {
-        return rezerwacjaRepo.findAllByNajemca_Nazwa(nazwa);
+        return rezerwacjaService.findByNajemca(nazwa);
     }
 
     @GetMapping("/obiekt/{id}")
     public List<Rezerwacja> showAll(@PathVariable Long id) {
-        return rezerwacjaRepo.findAllByObiekt_Id(id);
+        return rezerwacjaService.findByObiekt(id);
     }
 
     @PostMapping
     public void create(@RequestBody Rezerwacja rezerwacja) {
-        rezerwacjaRepo.save(rezerwacja);
+        rezerwacjaService.create(rezerwacja);
     }
 
     @PatchMapping("/{id}")
     public void update (@RequestBody Rezerwacja rezerwacja) {
-        rezerwacjaRepo.save(rezerwacja);
+        rezerwacjaService.update(rezerwacja);
     }
 }
