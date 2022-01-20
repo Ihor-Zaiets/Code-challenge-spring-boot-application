@@ -2,7 +2,8 @@ import Code.challenge.spring.boot.application.controllers.RezerwacjiController;
 import Code.challenge.spring.boot.application.models.Rezerwacja;
 import Code.challenge.spring.boot.application.services.RezerwacjaService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.aspectj.lang.annotation.Before;
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -29,7 +30,7 @@ public class RezerwacjaServiceTest {
     @InjectMocks
     private RezerwacjiController rezerwacjiController;
 
-    @Before("")
+    @BeforeEach
     public void init() {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(rezerwacjiController).build();
@@ -45,12 +46,12 @@ public class RezerwacjaServiceTest {
         when(rezerwacjiController.showAll()).thenReturn(list);
 
         mockMvc.perform(
-                get("/")
+                get("/rezerwacji")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(list)))
                 .andExpect(status().isOk());
 
-        verify(rezerwacjiController, times(1)).showAll();
-        verifyNoMoreInteractions(rezerwacjiController);
+        verify(rezerwacjaService, times(1)).showAll();
+        verifyNoMoreInteractions(rezerwacjaService);
     }
 }

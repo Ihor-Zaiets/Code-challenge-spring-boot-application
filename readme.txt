@@ -111,12 +111,12 @@ rozbić na mniejsze części i iść krok po kroku". Jak ustawiłem sobie deadli
         - logikę Servisu, żeby nie było powtarzań
         - napisać test
 
+        (20.01.2022)
+        Dokończyłem realizacje poziomu Service. Zgadałem jeszczze, że mam obliczać koszt, to teź dodałem te funkcji.
+
 6. Test
-        (18.01.2022)
-        Powiedziałbym, że tutaj zastosowałem przepis Paretto 20% sił dają 80% rezultatu. Szpędzam już drugi dzień, żeby napisać
-    testy, ale nie działają mi. Chyba już wszystko gotowe, ale zostaje mały problem i nie wiem jak go naprawić.
-    Już spędzony czas nie jest warty celu. Według mnie, zostawić jak jest i wyjaśnić szczegóły na rozmowie rekrutacyjnej
-    jest lepszym wariantem, niż spędzić jeszcze kilka dni na te funkcji. Chodzi o to, że jeśli czas realizacji zadania też
-    jest oceniany, a byłoby dziwnie, gdyby nie był, to lepiej skończyć szybszej, niż skończyć funkcje. Wiem, że testy są
-    ważne i nie jestem nie odpowiedzialny. Poprostu patrzę na tą sytuację jak gdyby pracowałem w firmie. W takiej sytuacji
-    świetnie pomógłby mentor, bo 3 minuty rozmowy zaoszczędziłyby 2 dni googlowania.
+        Napisałem testy. Spędziłem 2 dni. Wszystko, co mogło iść nie tak, szło.
+
+7. Praca papierowa
+        Teraz mam skończyć ten plik. Napisać opis trzech projektów i uporządkować moje konspekty.
+        Napisanie samego projektu, to jeszcze nie wszystko.
