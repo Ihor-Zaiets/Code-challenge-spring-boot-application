@@ -21,9 +21,12 @@ public class RezerwacjaService {
         return rezerwacjaRepo.findAll();
     }
 
-    //todo nie może być dwóch rezerwacji tego samego obiektu jednocześnie
+    /** Metoda szuka, czy nie ma nakadań rezerwacji dla tego samego obiektu w tym samym czasie.
+    * */
     public void save(Rezerwacja rezerwacja) {
-        rezerwacjaRepo.save(rezerwacja);
+        if (rezerwacjaRepo.findAllPoczatek(rezerwacja.getObiekt().getId(), rezerwacja.getPoczatek(), rezerwacja.getKoniec()) == 0 &&
+        rezerwacjaRepo.findAllKoniec(rezerwacja.getObiekt().getId(), rezerwacja.getPoczatek(), rezerwacja.getKoniec()) == 0)
+            rezerwacjaRepo.save(rezerwacja);
     }
 
     public List<Rezerwacja> findByNajemca(String nazwaNajemcy) {
