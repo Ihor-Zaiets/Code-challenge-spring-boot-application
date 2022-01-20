@@ -17,4 +17,8 @@ public interface RezerwacjaRepo extends JpaRepository<Rezerwacja, Long> {
     @Query (value = "select count(koniec) from rezerwacja where obiekt_id = ? and koniec between ? and ?",
     nativeQuery = true)
     int findAllKoniec(long id, Date start, Date end);
+
+    @Query(value = "select date_part('day', age(?, ?))",
+    nativeQuery = true)
+    int calculateDays(Date end, Date start);
 }

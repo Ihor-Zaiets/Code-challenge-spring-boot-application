@@ -25,8 +25,11 @@ public class RezerwacjaService {
     * */
     public void save(Rezerwacja rezerwacja) {
         if (rezerwacjaRepo.findAllPoczatek(rezerwacja.getObiekt().getId(), rezerwacja.getPoczatek(), rezerwacja.getKoniec()) == 0 &&
-        rezerwacjaRepo.findAllKoniec(rezerwacja.getObiekt().getId(), rezerwacja.getPoczatek(), rezerwacja.getKoniec()) == 0)
+        rezerwacjaRepo.findAllKoniec(rezerwacja.getObiekt().getId(), rezerwacja.getPoczatek(), rezerwacja.getKoniec()) == 0) {
+            rezerwacja.setKoszt(rezerwacjaRepo.calculateDays(rezerwacja.getKoniec(), rezerwacja.getPoczatek()) *
+                    rezerwacja.getObiekt().getCenaJednostkowa());
             rezerwacjaRepo.save(rezerwacja);
+        }
     }
 
     public List<Rezerwacja> findByNajemca(String nazwaNajemcy) {
